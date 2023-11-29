@@ -9,20 +9,25 @@ function tableGen() {
     /* Selezione della form */
     let difficulty = parseInt(difficultyCheck());
 
+    let container = document.querySelector('.square-container');
+
     /* Quantità dei quadrati in base alla difficoltà */
     console.log(difficulty)
 
     switch(difficulty){
         case 1: 
         tableSize = 100;
+        container.style.width = '1000px'
         break;
 
         case 2:
         tableSize = 81;
+        container.style.width = '900px'
         break;
 
         case 3:
         tableSize = 49;
+        container.style.width = '700px'
         break;
     }
         
