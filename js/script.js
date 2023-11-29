@@ -1,10 +1,34 @@
 function tableGen() {
     /* Scompare il bottone */
-    btnNone = document.getElementById('genBtn');
-    btnNone.style.display = 'none';
+    btnNone = document.getElementById('noneDisplayed');
+    btnNone.classList.add('d-none');
+
+    /* Quantità dei quadrati */
+    let tableSize = 0;
+
+    /* Selezione della form */
+    let difficulty = parseInt(difficultyCheck());
+
+    /* Quantità dei quadrati in base alla difficoltà */
+    console.log(difficulty)
+
+    switch(difficulty){
+        case 1: 
+        tableSize = 100;
+        break;
+
+        case 2:
+        tableSize = 81;
+        break;
+
+        case 3:
+        tableSize = 49;
+        break;
+    }
+        
 
     /* Generazione dei 100 quadrati */
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= tableSize; i++) {
         /* Creiamo l'elemento div all'interno del container */
         const divGen = document.createElement("div");
         document.querySelector(".square-container").appendChild(divGen);
@@ -22,9 +46,13 @@ function tableGen() {
     }
 }
 
-function difficulty(){
-    
+function difficultyCheck(){
+    formValue = document.getElementById('difficulty').value;
+    return formValue;
 }
+
+
+
 
 
 
